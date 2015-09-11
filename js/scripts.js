@@ -16,6 +16,18 @@ var findReplace = function(string, find, replace) {
     }
 
     return finalString;
-
-
 };
+
+$(document).ready(function() {
+    $("form#replacer").submit(function(event) {
+        var string = $("input#string").val();
+        var find = $("input#find").val();
+        var replace = $("input#replace").val();
+        var result = findReplace(string, find, replace);
+
+        $(".result").text(result);
+
+        $("#result").show();
+        event.preventDefault();
+    });
+});
