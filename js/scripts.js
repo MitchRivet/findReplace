@@ -1,10 +1,17 @@
 var findReplace = function(string, find, replace) {
 
+    //taking the inputted string and making it lowercase
+    var lowerString = string.toLowerCase();
+
+    //creating a regex object for using the replace() method case-insensitive
+    var re = new RegExp(find, "ig");
+
     //determining if the find word is inside of string
-    if (string.indexOf(find) !== -1)
+    if (lowerString.search(find) !== -1)
     {
-        //if return true, finalstring is string where find is replaced with replace 
-        var finalString = string.replace(find, replace)
+        //if return true, finalstring is string where find is replaced with replace
+
+        var finalString = string.replace(re, replace);
     }
 
     return finalString;
