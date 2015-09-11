@@ -10,7 +10,8 @@ var findReplace = function(string, find, replace) {
     if (lowerString.search(find) !== -1)
     {
         //if return true, finalstring is string where find is replaced with replace
-
+        //re is the regex object so that we can find a word regardless of case
+        //replace() will word even if the word is next to punctuation
         var finalString = string.replace(re, replace);
     }
 
